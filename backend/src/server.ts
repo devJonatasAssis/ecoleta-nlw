@@ -1,9 +1,8 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/api', (req, res) => {
-    return res.send('Api ta rodando');
-});
-
+app.use(express.json());
+app.use(routes);
 app.listen(3333);
